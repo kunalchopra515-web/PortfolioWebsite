@@ -50,11 +50,15 @@
         }
 
         /* general */
-        /* ADDED: scroll-behavior: smooth; and dynamic background */
+        /* IMPORTANT FIX: Applied scroll-behavior: smooth to html and body */
+        html, body {
+             scroll-behavior: smooth; 
+        }
+
         body{
             color:#fff;
             font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; 
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth is now in html,body selector */
             /* Dark purple blend background */
             background: linear-gradient(270deg, #000000, #150d1a, #000000); 
             background-size: 600% 600%;
@@ -137,14 +141,14 @@
         <li><a class="nav-underline hover:text-purple-400" href="#home">Home</a></li>
         <li><a class="nav-underline hover:text-purple-400" href="#about">About</a></li>
         <li><a class="nav-underline hover:text-purple-400" href="#skills">Skills</a></li>
-        <li><a class="nav-underline hover:text-purple-400" href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-underline hover:text-purple-400" href="#portfolio">Experience</a></li>
         <li><a class="nav-underline hover:text-purple-400" href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <main id="home" class="flex flex-col-reverse md:flex-row gap-6 px-6 mr-3 justify-between md:px-20 pt-32 items-start md:items-center">
     <div data-aos="fade-right" class="flex-1 max-w-xl md:order-1 order-2">
-        <p class="text-xl text-gray-400">  Hi, I'm</p>
+        <p class="text-xl text-gray-400">  Hi, I'm</p>
         <h2 class="text-5xl font-bold mt-2">Kunal Chopra</h2>
         <h3 class="typing text-2xl mt-2 text-purple-400 font-semibold" id="role"></h3>
         <p class="mt-4 text-gray-300">Hi! I'm Kunal Chopra. I build delightful front-end experiences using modern CSS and JavaScript. I like clean code, subtle motion and pixel-perfect UI.</p>
@@ -152,8 +156,6 @@
 
     <div data-aos="fade-left" data-aos-delay="300" class="w-full md:w-[45vw] max-w-sm flex-0 relative flex justify-center items-center md:order-2 order-1">
         <div class="profile-wrap" style="width:420px;height:420px">
-            <div class="halo"></div>
-
             <img src="./PFP.jpg" 
                 class="
                     size-50
@@ -164,7 +166,7 @@
                     glowing-border
                 ">
                 
-            <div class="w-[400px] h-[400px] absolute bigrotation">
+            <div class="w-[400px] h-[400px] absolute bigrotation hidden md:block">
                 <img src="./html_logo.jpg" class="z-20 shadow-gray-500 shadow-md rounded-[50%] w-[60px] h-[60px] absolute left-[50%] translate-x-[-50%] origin-[30px_200px] rotate360">
                 <img src="./css_logo.png" class="bg-white shadow-gray-500 shadow-md z-10 w-[60px] h-[60px] rounded-[50%] absolute left-[50%] translate-x-[-50%] origin-[30px_200px] rotation120">
                 <img src="./tailwindcss logo.jpeg" class="z-0 shadow-gray-500 shadow-md w-[60px] h-[60px] rounded-[50%] absolute left-[50%] translate-x-[-50%] origin-[30px_200px] rotation240">
@@ -173,7 +175,7 @@
     </div>
 </main>
 
-<section id="about" class="px-6 md:px-20 py-16"> 
+<section id="about" class="px-6 md:px-20 md:py-16"> 
     
     <hr class="border-purple-600 w-3/4 md:w-2/3 mx-auto my-20 opacity-50"/>
     
@@ -215,7 +217,7 @@
     </div>
 </section>
 
-<section id="skills" class="px-6 md:px-20 py-16"> 
+<section id="skills" class="px-6 md:px-20 md:py-16"> 
     
     <hr class="border-purple-600 w-3/4 md:w-2/3 mx-auto my-20 opacity-50"/>
     
@@ -244,7 +246,7 @@
     </div>
 </section>
 
-<section id="portfolio" class=" md:px-20 py-4 "> 
+<section id="portfolio" class="px-6 md:px-20 py-4 "> 
     
     <hr class="border-purple-600 w-3/4 md:w-2/3 mx-auto my-20 opacity-50"/>
 
@@ -276,18 +278,44 @@
     </div>
 </section>
 
-<footer id="contact" class="px-6 md:px-20 py-10 text-center text-gray-500">
+<section id="contact" class="px-6 md:px-20 md:py-16">
+    
+    <hr class="border-purple-600 w-3/4 md:w-2/3 mx-auto my-20 opacity-50"/>
+
+    <h2 data-aos="fade-right" data-aos-delay="100" class="section-title-underline text-4xl md:text-5xl font-bold mb-10 text-purple-400">
+        <i class="ri-contacts-book-line text-3xl mr-2"></i> Get In Touch
+    </h2>
+
+    <div data-aos="fade-up" class="max-w-4xl grid md:grid-cols-2 gap-8 md:gap-16">
+        
+        <div class="flex items-center space-x-4 bg-gray-900/50 p-6 rounded-xl border border-purple-500/30 transition duration-300 hover:bg-gray-800/50 hover:shadow-2xl hover:shadow-purple-500/10">
+            <i class="ri-mail-line text-4xl text-purple-400"></i>
+            <div>
+                <p class="text-lg font-semibold text-gray-300">Email Address</p>
+                <a href="mailto:notkunalchopra@gmail.com" class="text-xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">notkunalchopra@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-4 bg-gray-900/50 p-6 rounded-xl border border-purple-500/30 transition duration-300 hover:bg-gray-800/50 hover:shadow-2xl hover:shadow-purple-500/10">
+            <i class="ri-phone-line text-4xl text-purple-400"></i>
+            <div>
+                <p class="text-lg font-semibold text-gray-300">Business Contact</p>
+                <a href="tel:+917814681832" class="text-xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">+91 78146 81832</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+<footer class="px-6 md:px-20 py-10 text-center text-gray-500">
     <p data-aos="fade-up" data-aos-duration="1000">&copy; 2025 Kunal Chopra. </p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
-        duration: 800, // Duration of animation (milliseconds)
-        once: true,      // Whether animation should only happen once - important for smooth feel
+        duration: 800, 
+        once: true,  
     });
-
-    // Typing animation script
     const roles=["Front-End Developer","Web Designer","UI/UX Enthusiast"];let idx=0,char=0,typing=true;const el=document.getElementById("role");
     function type(){if(typing){if(char<roles[idx].length){el.textContent=roles[idx].slice(0,++char);setTimeout(type,80);}else{typing=false;setTimeout(type,1500);}}else{if(char>0){el.textContent=roles[idx].slice(0,--char);setTimeout(type,60);}else{typing=true;idx=(idx+1)%roles.length;setTimeout(type,300);}}}
     type();
